@@ -22,7 +22,7 @@ app.post('/', (req, res) => {
 
         for(const v in data[y][m][d]){
           value.push(data[y][m][d][v]);
-          return res.send(label + ' '+ value)
+          console.log(label, value)
           
         }
       }
