@@ -23,12 +23,13 @@ app.post('/', (req, res) => {
 
         for(const v in data[y][m][d]){
           value.push(data[y][m][d][v]);
-          console.log(label, value)
+          
           
         }
       }
     }
   }
+  res.send(`Data: ${label} Valores: ${value}`)
   
 });
 
