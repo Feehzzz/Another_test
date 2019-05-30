@@ -1,6 +1,7 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const app = express();
+const webport = process.env.PORT || 3000;
 
 
 
@@ -29,12 +30,8 @@ app.post('/', (req, res) => {
     }
   }
   
-  
-  
-  
- 
 });
 
-app.listen(3000, () => {
+app.listen(webport, () => {
   console.log('Running local host ' + 3000);
 });
