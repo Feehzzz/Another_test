@@ -13,22 +13,23 @@ app.post('/', (req, res) => {
   let label = [];
   let value = [];
 
-  for (const y in data){
-    
+  for (const y in data){  
+
     for(const m in data[y]){
-      
+
       for(const d in data[y][m]){
         label.push(y+'-'+m+'-'+d);
-        for(const v in data[y][m][d])
-        value.push(data[y][m][d][v]);
-        
-        
+
+        for(const v in data[y][m][d]){
+          value.push(data[y][m][d][v]);
+          return res.send(label + ' '+ value)
+          
+        }
       }
     }
-   
   }
-  console.log(label, value)
-
+  
+  
   
   
  
