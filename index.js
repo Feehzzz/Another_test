@@ -11,13 +11,25 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.post('/', (req, res) => {
   let data = req.body
   let label = [];
-  let values = []
-  for(const key of Object.keys(data)){
-    label = data[key];
-    values = key;
+  let value = [];
+
+  for (const y in data){
+    
+    for(const m in data[y]){
+      
+      for(const d in data[y][m]){
+        label.push(y+'-'+m+'-'+d);
+        for(const v in data[y][m][d])
+        value.push(data[y][m][d][v]);
+        
+        
+      }
+    }
+   
   }
+  console.log(label, value)
+
   
-  console.log(values,label )
   
  
 });
