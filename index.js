@@ -13,6 +13,7 @@ app.post('/', (req, res) => {
   let data = req.body
   let label = [];
   let value = [];
+  let o = [];
 
   for (const y in data){  
 
@@ -29,8 +30,13 @@ app.post('/', (req, res) => {
       }
     }
   }
-  res.send(`Data: ${label} Valores: ${value}`)
-  
+  for(let i in label ){
+    o.push(label[i])
+    o.push(value[i])
+    
+    
+  }
+  return res.send(o)
 });
 
 app.listen(webport, () => {
